@@ -31,14 +31,14 @@ use Jenssegers\Agent\Agent;
 //     );
 // });
 
-
 Route::post('/teacher-register', function(Request $request){
     if(strlen($request->password) < 8 || ($request->password != $request->password_conf)){
         return back()->withInput()->with('error', 'Choose Good Password');
     }
 
     $admin = Admin::where('email', $request->email)->first();
-    if($admin){
+    if($admin)
+    {
         return back()->withInput()->with('error', 'Email Already Exists');
     }
     $admin = Admin::where('phone', $request->phone)->first();
