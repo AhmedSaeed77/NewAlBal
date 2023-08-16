@@ -64,6 +64,7 @@ Route::post('/teacher-register', function(Request $request){
 Route::post('Urway/pay', 'UrwayController@pay')->name('urway.pay')->middleware('auth');
 Route::get('Urway/callback', 'UrwayController@callback')->name('urway.callback');
 
+
 /** MyFatoorah Payment Gateway */
 Route::post('/MyFatoorah/package-payment/price-details', 'MyFatoorahController@price_details')->name('myfatoorah.price.details');
 Route::post('MyFatoorah/charge', 'MyFatoorahController@charge')->name('myfatoorah.charge');
